@@ -88,6 +88,7 @@ Para simular o circuito e o código no Wokwi, siga os passos:
 4.  Copie o conteúdo do arquivo `codigo/main.cpp` para o editor de código do Wokwi.
 5.  No Wokwi, você pode simular os valores do sensor MPU6050 clicando no sensor e ajustando os sliders de aceleração. Para simular as anomalias, você pode mover os sliders rapidamente para criar picos ou variações significativas.
 6.  Inicie a simulação e observe as leituras no Monitor Serial. Copie os dados do Monitor Serial para um arquivo de texto para posterior análise (por exemplo, `dados/dados_simulados.txt`).
+7.  O projeto pode ser acessado em https://wokwi.com/projects/433062173526245377
 
 ## 4. Registro do Funcionamento da Simulação
 
@@ -127,14 +128,12 @@ def parse_serial_data(file_path):
                 data.append({'AccelX': accel_x, 'AccelY': accel_y, 'AccelZ': accel_z})
     return pd.DataFrame(data)
 
-# Supondo que o usuário irá colar o output do Monitor Serial em um arquivo chamado 'dados_simulados.txt'
-# Ou que o usuário irá exportar para um CSV e nomear como 'dados_simulados.csv'
+# Copie os dados do output no Monitor Serial e cole em um arquivo chamado 'dados_simulados.txt' ou 'dados_simulados.csv'
 
 # Tentar ler como CSV primeiro
 try:
     df = pd.read_csv('dados/dados_simulados.csv')
 except FileNotFoundError:
-    # Se não encontrar CSV, tentar ler como texto do Monitor Serial
     try:
         df = parse_serial_data('dados/dados_simulados.txt')
     except FileNotFoundError:
