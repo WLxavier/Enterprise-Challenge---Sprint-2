@@ -36,16 +36,5 @@ void loop() {
   Serial.print(a.acceleration.z);
   Serial.println(" m/s^2");
 
-  // Imprime os dados do giroscópio (opcional)
-  // Serial.print("GyroX: ");
-  // Serial.print(g.gyro.x);
-  // Serial.print(", GyroY: ");
-  // Serial.print(g.gyro.y);
-  // Serial.print(", GyroZ: ");
-  // Serial.print(g.gyro.z);
-  // Serial.println(" rad/s");
-
   delay(500); // Intervalo de leitura dos dados
 }
-
-
