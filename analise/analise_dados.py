@@ -14,8 +14,7 @@ def parse_serial_data(file_path):
                 data.append({'AccelX': accel_x, 'AccelY': accel_y, 'AccelZ': accel_z})
     return pd.DataFrame(data)
 
-# Supondo que o usuário irá colar o output do Monitor Serial em um arquivo chamado 'dados_simulados.txt'
-# Ou que o usuário irá exportar para um CSV e nomear como 'dados_simulados.csv'
+# Copie os dados do output no Monitor Serial e cole em um arquivo chamado 'dados_simulados.txt' ou 'dados_simulados.csv'
 
 # Tentar ler como CSV primeiro
 try:
